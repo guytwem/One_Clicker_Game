@@ -23,6 +23,7 @@ public class Player : MonoBehaviour
     #endregion
 
     private Rigidbody2D rb;
+    private Animator anim;
 
     private ScoreManager scoreManager;
 
@@ -33,6 +34,8 @@ public class Player : MonoBehaviour
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
+
+        anim = GetComponent<Animator>();
 
         youWin.SetActive(false);
         gameOver.SetActive(false);
@@ -49,7 +52,11 @@ public class Player : MonoBehaviour
         if (Input.GetKey(KeyCode.Space))
         {
             charger += Time.deltaTime;
-
+            anim.SetBool("isJumping", true);
+        }
+        else
+        {
+            anim.SetBool("isJumping", false);
         }
 
 

@@ -1,5 +1,6 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using UnityEditor;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 public class Buttons : MonoBehaviour
@@ -15,5 +16,10 @@ public class Buttons : MonoBehaviour
     public void Play()
     {
         SceneManager.LoadScene("Level01");
+    }
+
+    public void Exit()
+    {
+        EditorApplication.isPlaying = false;
     }
 }
