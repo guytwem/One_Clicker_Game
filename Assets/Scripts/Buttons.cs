@@ -20,6 +20,6 @@ public class Buttons : MonoBehaviour
 
     public void Exit()
     {
-        EditorApplication.isPlaying = false;
+        Application.Quit();
     }
 }
